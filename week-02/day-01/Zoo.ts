@@ -47,4 +47,4 @@ class Reptile extends Animal{
 
 }
 
-export{Mammal, Bird, Reptile};
+export{Mammal, Bird, Reptile, Animal};
