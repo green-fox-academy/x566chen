@@ -12,11 +12,11 @@ interface Stack {
     remove(): string;
   }
 
-let arr = [1, 2, 3, 4, 5];
+let arr = ['1', '2', '3', '4', '5'];
 
 class stack implements Stack{
 
-    constructor(arr:number[]){
+    constructor(arr:string[]){
        
     };
     empty():boolean{
@@ -28,9 +28,8 @@ class stack implements Stack{
         return arr[i-1];
     }
 
-    push(value: string): any{
-        arr.push();
-        return arr;
+    push(value: string): void{
+        arr.push(value);
     };
     pop(): any{
         arr.length = arr.length-1;
@@ -70,7 +69,8 @@ class queue implements Queue{
 }
 const stack1 = new stack(arr);
 console.log(stack1.peek());
-console.log(stack1.push('3'));
+stack1.push('3');
+console.log(stack1);
 console.log(stack1.pop());
 console.log(stack1.empty());
 
