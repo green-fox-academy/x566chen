@@ -15,56 +15,52 @@ interface Stack {
 let arr = ['1', '2', '3', '4', '5'];
 
 class stack implements Stack{
+     arr : string[];
 
     constructor(arr:string[]){
-       
+       this.arr = arr;
     };
     empty():boolean{
-        return !arr.length;
+        return !this.arr.length;
     }
 
     peek():any{
-        let i = arr.length;
-        return arr[i-1];
+        let i = this.arr.length;
+        return this.arr[i-1];
     }
 
     push(value: string): void{
-        arr.push(value);
+        this.arr.push(value);
     };
-    pop(): any{
-        arr.length = arr.length-1;
-        let arr1 = [];
-        for(let i=0; i<arr.length;i++){
-            arr1.push(arr[i]);
-        }
-        return arr1;
+    pop(): string{ 
+        return this.arr.pop();
     };
 }
-let que = [1,3,5,7];
-class queue implements Queue{
-
-    constructor(que: number[]){
-     
+let que = ['1','3','5','7'];
+class Queue1 implements Queue{
+    private que:string[];
+    constructor(que){
+      this.que = que;
     }
     empty():boolean{
-        return !que.length;
+        return !this.que.length;
     }
     peek():string{
-        let i = que.length;
-        return (que[i-1]).toString();
+        
+        return this.que[this.que.length-1];
     }
-    add(value: any): void{
-        que.push(value);
+    add(value: string): void{
+        this.que.push(value);
     };
 
-
-    remove(): any{
-        let que1 = [];
-        for(var i=0; i<que.length-1; i++){
-            que1.push(que[i]);
+    remove(): string{
+        let que1 : string;
+        que1 ='';
+        for(var i=0; i<this.que.length-1; i++){
+            que1 = que1 + this.que[i];
         }
-        que = que1;
-        return que;
+        
+        return que1;
     };
 }
 const stack1 = new stack(arr);
@@ -74,9 +70,10 @@ console.log(stack1);
 console.log(stack1.pop());
 console.log(stack1.empty());
 
-
-const queue1 = new queue(que);
+console.log('----------------')
+const queue1 = new Queue1(que);
 console.log(queue1.peek());
-console.log(queue1.add(9));
+queue1.add('9');
+console.log(queue1);
 console.log(queue1.remove());
 

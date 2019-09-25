@@ -1,75 +1,113 @@
 interface LinkedList {
     add(value: string, index?: number): void;
     get(index: number): string;
-    removeItem(value: string): void;
+    removeItem(value: number): string;
     remove(index: number): string;
     size(): number;
   }
 class node{
-    value: any;
+    value: string;
     next? : node;
-    prev? : node;
-    constructor(value:any){
+ 
+    constructor(value?:string){
         this.value = value;
         this.next = null;
-        this.prev = null;
+
     }
 }
 
 
   class linkedList implements LinkedList{
-      private count: number = 0;
-      private header: node;
-      private tail: node;
+      count: number = 0;
+      header: node;
+      tail: node;
+
 
       constructor(){
-          this.header = new node(null);
-          this.tail = new node(null);
-          this.header.prev = this.header.next = this.tail;
-          this.tail.next = this.tail.prev = this.header;
+          this.header = new node();
+          this.tail = this.header;
       }
 
       empty():boolean{
           return this.count === 0;
       }
       add(value: string, index?: number):void{
-          
-          if(this.empty()){
-            return;
-          }
-          let curr = this.header.next;
-          while(curr !== this.tail){
-              if(curr.value == value){
-                  let valueItem = new node(value);
-                  valueItem.prev =curr;
-                  valueItem.next = curr.next;
-                  curr.next.prev = valueItem;
-                  curr.next = valueItem;
-                  this.count ++;
-                  break;
-
+          if(!index){
+            if (this.count === 0){
+                this.header.next = new node(value);
+                this.tail = this.header.next;
+                
+              }else if(index === undefined || index >= this.count || index < 0 ){
+                let curr = new node(value);
+                this.tail.next = curr;
+                this.tail = curr; 
               }
-              curr = curr.next;
+            }
+          if(index){
+              let curr_pointer = this.header;
+              for(let i = 0; i <index; i++){
+                  curr_pointer = curr_pointer.next;
+              }
+              let tmp = curr_pointer.next;
+              curr_pointer.next = new node(value);
+              curr_pointer.next.next = tmp;
           }
+          this.count++;
+          }
+
+
+          get(index: number): string{
+              let _curr = this.header;
+              for (let i=0; i <= index; i++){
+                  _curr = _curr.next;
+              }
+              return _curr.value;
+          };
+          removeItem(value: number): string{
+              let _curr = this.header;
+              for (let i = 0 ; i <= value; i++){
+                  _curr = _curr.next;
+              }
+              return _curr.value;
+
+          };
+          remove(index: number): string{
+              let _curr = this.header;
+              let value:string;
+
+             
+                  for(let i = 0; i < index; i++){
+                      _curr = _curr.next;
+                  };
+                  value = _curr.next.value;
+                  _curr.next = _curr.next.next;
+                  this.count--;
+                  return value;
+              
+          };
+          size(): number{
+              return this.count;
+          };
+
+          print(){
+              let _curr = this.header.next;
+              for (let i = 0; i < this.count; i++){
+                  console.log(` ${_curr.value}`);
+                  _curr = _curr.next
+              }
+          }
+
 
       }
-      get(index: number): string{
-          if (this.empty()){
-              return;
-          }
-          let indexItem = this.header.next;
-          while(indexItem !== this.tail){
-              if (indexItem.value ==)
-          }
 
-      };
-      removeItem(value: string): void{
+let link1 = new linkedList();
+link1.add('2');
+link1.add('3');
+link1.add('4');
+link1.add('5');
+link1.print();
+//link1.add('1',1);
+//console.log(link1);
 
-      };
-      remove(index: number): string{
 
-      };
-      size(): number{
 
-      };
-  }
