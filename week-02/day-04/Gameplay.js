@@ -49,7 +49,7 @@ class Dimension {
             arr_inner = [];
 
         }
-        console.log(this.arr_outer);
+
 
         let row_col = [];
 
@@ -69,9 +69,9 @@ class Dimension {
             mine++;
 
         }
-        console.log(row_col);
 
-        console.log(this.arr_outer);
+        return this.arr_outer;
+
 
     }
 
@@ -83,9 +83,9 @@ class Dimension {
 
         for (let i = 0; i < 26; i++) {
             if (new_zimu_num[0] == arr[i]) {
-                this.coordinator.push(i);
-                let change_number = parseInt(new_zimu_num[1], 10)-1;
-                this.coordinator.push(change_number);
+
+                let change_number = parseInt(new_zimu_num[1], 10) - 1;
+                this.coordinator.push([i, change_number]);
             }
         }
         return this.coordinator;
@@ -93,36 +93,79 @@ class Dimension {
     }
 
     judge_mine() {
-        let x = this.coordinator[0];
-        let y = this.coordinator[1];
-        let count_mine = 0;
-        if (this.arr_outer[x][y] == 'X') {
-            console.log('Sad! You lost :(')
-        } else {
-            if (y >= 1 && this.arr_outer[x][y - 1] == 'X') {
-                count_mine++;
-            }
-            if (this.arr_outer[x][y + 1] == 'X') {
-                count_mine++;
-            }
-            if (x >= 1 && this.arr_outer[x - 1][y] == 'X') {
-                count_mine++;
-            }
-            if (this.arr_outer[x + 1][y] == 'X') {
-                count_mine++;
-            }
 
-            if (count_mine == 0) {
-                return this.arr_outer[x][y] = 'O';
+        for (let i = 0; i < this.coordinator.length; i++) {
+            let x = this.coordinator[i][0];
+            let y = this.coordinator[i][1];
+            let count_mine = 0;
+            if (this.arr_outer[x][y] == 'X') {
+                return 'X';
             } else {
-                return this.arr_outer[x][y] = count_mine;
+                if (y >= 1 && this.arr_outer[x][y - 1] == 'X') {
+                    count_mine++;
+                }
+                if (this.arr_outer[x][y + 1] == 'X') {
+                    count_mine++;
+                }
+                if (x >= 1 && this.arr_outer[x - 1][y] == 'X') {
+                    count_mine++;
+                }
+                if (this.arr_outer[x + 1][y] == 'X') {
+                    count_mine++;
+                }
+
+                if (count_mine == 0) {
+
+                    this.arr_outer[x][y] = 'O';
+                    return 'O';
+                } else {
+                    this.arr_outer[x][y] = count_mine;
+                    return count_mine;
+                }
+
             }
 
         }
+
     }
 
-    print_array(){
-        console.log(this.arr_outer);
+    print_array() {
+        //console.log(this.arr_outer);
+
+        let array = [];
+
+        let str = '';
+        let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+        for (let i = 0; i < this.num; i++) {
+            str = str + ' ' + (i + 1);
+
+        }
+        console.log(' ' + str);
+        
+        let str1 = '';
+
+        for (let m = 0; m < this.num; m++) {
+            for (let n = 0; n < this.num; n++) {
+
+                if(this.arr_outer[m][n]=='X'){
+                    str1 = str1 + ' #';
+                }else if (this.arr_outer[m][n]=='O'){
+                    str1 = str1 + ' #';
+                }else if (this.arr_outer[m][n]=='1'){
+                    str1 = str1 + ' 1';
+                }else if (this.arr_outer[m][n]=='2'){
+                    str1 = str1 + ' 2';
+                }else if (this.arr_outer[m][n]=='3'){
+                    str1 = str1 + ' 3';              
+                }else if (this.arr_outer[m][n]=='4'){
+                    str1 = str1 + ' 4';
+                }
+                
+            }
+
+            console.log(arr[m] + str1);
+            str1 = '';
+        }
     }
 
 
@@ -131,6 +174,20 @@ class Dimension {
 
 }
 
+
+
+// let dimension = new Dimension(6);
+// console.log(dimension.construct(6));
+// console.log(dimension.set_mine(4));
+// console.log(dimension.input_reveal('A1'));
+// console.log(dimension.judge_mine());
+// dimension.print_array();
+// console.log(dimension.input_reveal('B1'));
+// console.log(dimension.judge_mine());
+// dimension.print_array();
+// console.log(dimension.input_reveal('C1'));
+// console.log(dimension.judge_mine());
+// dimension.print_array();
 
 
 module.exports = Dimension;
