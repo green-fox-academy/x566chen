@@ -23,3 +23,5 @@ var possibleTriangles = [
     [-1,-1,-1]
 ];
 
+let array = possibleTriangles.map(Triangle => isTriangle(...Triangle))
+console.log(array);

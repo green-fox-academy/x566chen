@@ -32,5 +32,10 @@ var type = computer.type;
 var monitorcolor = computer.monitor.color;
 
 //from ES6:
-
-var { type, monitor: { size: monitorsize } } = computer;
+//--------------
+// let { model, color, year, doors, historical } = car
+// let {
+//   type,
+//   monitor: { color: monitor_color, size, HDMI, VGA },
+//   tower: { color: tower_color, CPU, memory, SSD }
+// } = computer

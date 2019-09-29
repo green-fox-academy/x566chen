@@ -4,8 +4,8 @@ var updated = `Hello ${name}!
 How are you today?`;
 
 function log(timestamp, username, action) {
-    return `${old}`;
-    //return `${updated}`;
+  
+    return `INFO - ${timestamp} ${username} : ${action}`
 }
 
-console.log(log());
+console.log(log(100, 'Bob', 'sayhello'));
