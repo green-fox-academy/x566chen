@@ -1,0 +1,12 @@
+.container .asteroid{
+    border: 1px solid rgb(75, 148, 107);
+}
+p{
+    background: rgb(197, 238, 12);
+}
+.big{
+    color: rgb(12, 12, 214);
+}
+div{
+    font-weight: bold;
+}
