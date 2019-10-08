@@ -1,0 +1,22 @@
+.container{
+    left:50px;
+    position: absolute;
+    width: 700px;
+    height:300px;
+    background-color: yellow;
+    margin:0;
+    padding: 0;
+}
+li{list-style:none;}
+ul{list-style:none ;}
+.item{
+    display: inline-block;
+    
+    top: 100px;
+    position: relative;
+    margin:0;
+    padding: 0;
+    background-color: purple;
+    height:100px;
+    width:100px;
+}

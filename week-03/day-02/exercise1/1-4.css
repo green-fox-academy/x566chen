@@ -1,0 +1,34 @@
+
+.container  {
+
+    position: relative;
+    width: 400px;
+    height: 400px;
+
+    
+}
+
+.item{
+    position: absolute;
+    width: 400px;
+    
+
+}
+.green{
+    height:100px;
+    top:0px;
+    background-color: greenyellow;
+}
+
+.yellow{
+    height:200px;
+    background-color: yellow;
+    top:200px;
+    
+}
+
+.purple{
+    height: 100px;
+    top: 100px;
+    background-color:purple;
+}
