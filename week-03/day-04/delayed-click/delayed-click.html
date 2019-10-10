@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: Delayed Click</title>
+  </head>
+  <body>
+    <button>Click me</button>
+
+
+    <script>
+
+        const btn = document.querySelector('button');
+        const body = document.querySelector('body');
+        let timer;
+
+        
+
+        btn.addEventListener('click', ()=>{
+
+            clearTimeout(timer);
+            timer=setTimeout(function(){
+            const txtcontent = document.createElement('div');
+            txtcontent.textContent = '2 seconds ellapsed';
+            body.appendChild(txtcontent);
+
+            },2000);
+
+
+            
+        })
+
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: Click Three Times</title>
+  </head>
+  <body>
+    <button>Click me</button>
+
+
+    <script>
+
+        const btn = document.querySelector('button');
+        const body = document.querySelector('body');
+        let timer;
+        let count = 0;
+        
+
+        btn.addEventListener('click', ()=>{
+            count++;
+            if(count%3 ==0){
+
+            clearTimeout(timer);
+            timer=setTimeout(function(){
+            const txtcontent = document.createElement('div');
+            txtcontent.textContent = '5 seconds elapsed and clicked 3 times';
+            body.appendChild(txtcontent);
+
+            },5000);
+
+            }
+
+
+
+            
+        })
+
+
+    </script>
+
+
+  </body>
+</html>
