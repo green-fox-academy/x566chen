@@ -4,18 +4,20 @@ const div = document.querySelector('#div');
 arr=['Esther','Eulalia','Harriet','Ida','Lula','Marguerite','Mary','Minerva','Nancy','Pearl','Rowena','Theodosia','Zephyrine','Albert','Bernard','Chester','Edmund','Ira','Leon','Linus','Ralph','Roger','Stanley','Van','Victor','Virgil','Wilfred','Esmeralda','Fernanda','Flavia','Ines','Io','Ione','Ludovica','Olga','Noa','Fflur','Saskia','Soleil','Anders','Bas','Boris','Dev','Dimitri','Ivan','Lazaro','Magnus','Neo','Seb','Soren','Vladimir','Teilo','Andromeda','Aster','Azalea','Bee','Birdie','Blossom','December','Dove','Lilac','Maple','Nova','Vega','Ash','Beach','Bear','Frost','Hawk','Huckleberry','Mars','Oak','Pike','Agatha','Agnes','Constance','Ethel','Eunice','Francine','Gertrude','Ida','Lenore','Mildred','Myrtle','Opal','Thomasina','Wilhelmina','Clarence','Edgar','Floyd','Irving','Leonard','Murray','Osbert','Oswald','Percival','Sheldon'];
 
 function* namelist(arr){
-
-    let name = arr.shift();
-    console.log(name);
+    const new_div = document.createElement('div');
+    div.appendChild(new_div);
+    let name = new_div.innerHTML=arr.shift();
+    yield name;
     
 }
 let count = 0;
 btn.addEventListener('click',()=>{
     if (count < arr.length){
-        const new_div = document.createElement('div');
-        namelist();
-        new_div.textContent = namelist().value;
-        div.appendChild(new_div);
+        
+        
+        let generator = namelist(arr);
+        generator.next(arr);
+        
     }
     count++;
 
