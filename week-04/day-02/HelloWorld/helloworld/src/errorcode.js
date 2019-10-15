@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default class errorcode extends React.Component{
-    render(){
-        return (
-            <div>Error:{} </div>
-        )
-    }
+const ErrorCode = ({match}) => {
+    return (
+        <div>
+            <h1>Error: {match.params.errorcode}</h1>
+        </div>
+    )
 }
+export default ErrorCode

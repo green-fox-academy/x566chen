@@ -5,9 +5,9 @@ const NavBar = () =>(
     <div>
         <div>
             <NavLink exact to='/'>Not Implement</NavLink> |&nbsp;
-            <NavLink to='/ route'>Hello World</NavLink> |&nbsp;
-            <NavLink to='/error route'>Error</NavLink> |&nbsp;
-            <NavLink to='/error/:errorcode route'>Error Code</NavLink>
+            <NavLink to='/route'>Hello World</NavLink> |&nbsp;
+            <NavLink to='/error'>Error</NavLink> |&nbsp;
+            <NavLink to='/error/:id'>Error Code</NavLink>
         </div>
     </div>
     )

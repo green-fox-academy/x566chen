@@ -5,7 +5,7 @@ import Haloworld from './haloworld';
 import Error1 from './error';
 import Nav from './nav';
 import Implement from './implement';
-import Errorcode from './errorcode';
+import ErrorCode from './errorcode';
 
 ReactDOM.render(
     <Router>
@@ -13,8 +13,8 @@ ReactDOM.render(
             <Nav/>
             <Route exact path="/" component={Implement} />
             <Route  path="/ route" component={Haloworld} />
-            <Route  path="/error route" component={Error1} />
-            <Route  path="/error/:errorcode route" component={Errorcode} />
+            <Route  path="/error" component={Error1} />
+            <Route  path="/error/:id" component={ErrorCode} />
         </div>
     </Router>,
     document.getElementById("app"))
