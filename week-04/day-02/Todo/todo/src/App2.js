@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ListItem from './listitem';
+import ListItem2 from './listitem2';
 import Dialog from './dialog';
+import './App2.css';
 
 
 
-class App extends Component {
+class App2 extends Component {
     constructor (props) {
         super(props);
         
@@ -50,6 +51,8 @@ class App extends Component {
         finished: sum
     });
 }
+
+
 render () {
   return (
       <div className="container">
@@ -57,7 +60,7 @@ render () {
           <Dialog addNewTask={this.addTask.bind(this)} nums={this.state.list.length}/>
           <ul>
               { this.state.list.map ((item, index) =>
-                  <ListItem 
+                  <ListItem2 
                       item={item}  
                       finishedChange={this.updateFinished.bind(this)} 
                       totalChange={this.updateTotal.bind(this)}
@@ -70,4 +73,4 @@ render () {
 }
 }
 
-export default App;
+export default App2;

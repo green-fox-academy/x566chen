@@ -1,0 +1,13 @@
+.container{
+    background-color:grey;
+    width: 250px;
+    height: 500px;
+    text-align: center;
+
+}
+.check-btn2{
+    background-color:gold;
+}
+.delete-btn2{
+    background-color: purple;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-class ListItem extends Component {
+
+class ListItem1 extends Component {
     constructor (props) {
         super(props);
 
@@ -34,7 +35,7 @@ class ListItem extends Component {
         };
 
         const finish = {
-            backgroundColor: '#FFFA9D',
+           
             color: '#FF9A3C',
             textDecoration: 'line-through'
         }
@@ -45,17 +46,18 @@ class ListItem extends Component {
         
         return (
             <li key={item.id} style={itemStyle}>
-                <span 
+
+                <span>{ item.name }</span>
+                <button 
                     onClick={this.handleFinished} 
                     id={item.id}
-                    className="check-btn"
+                    className="check-btn1"
                     style={{backgroundColor: item.status === 0 ? '#fff' : '#A1EAFB'}}
-                ></span>
-                <span>{ item.name }</span>
-                <button onClick={this.handleDelete} className="delete-btn">   delete</button>
+                    >Done</button>
+                <button onClick={this.handleDelete} className="delete-btn1" >Delete</button>
             </li>
         );
     }
 }
 
-export default ListItem;
+export default ListItem1;

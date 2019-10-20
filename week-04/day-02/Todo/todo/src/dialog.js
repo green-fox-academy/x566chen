@@ -7,6 +7,7 @@ class Dialog extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
+
 	handleClick () {
 		var len = this.props.nums;
 		var newid = len > 0 ? len : 0;
@@ -29,9 +30,7 @@ class Dialog extends Component {
 				<div>
 
 					<input type="text" ref="myText" placeholder=""/>
-				</div>
-				<div>
-					<input type="button" value="Add" onClick={this.handleClick}/>
+					<input className='btn' type="button" value="Add" onClick={this.handleClick}/>
 				</div>
 			</div>
 			
