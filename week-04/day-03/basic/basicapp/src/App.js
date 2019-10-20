@@ -5,7 +5,7 @@ import './App.css'
 //https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=73e0a905efdb4303939f186e4605c94c
 
 const new_url = 'https://newsapi.org/v2/top-headlines?country=cn&apiKey=73e0a905efdb4303939f186e4605c94c'
-const slow_url = `https://lofty-partner.glitch.me/delay/3000/url/${new_url}`
+const slow_url = `http://slowwly.robertomurray.co.uk/delay/3000/url/${new_url}`
 class App extends React.Component{
   constructor(props){
     super(props)
