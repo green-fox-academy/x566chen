@@ -1,0 +1,8 @@
+.alcohollist{
+    border: 1px;
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color:gray;
+  }

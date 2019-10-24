@@ -1,0 +1,28 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%=city.city%></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/citystyle.css" />
+  </head>
+  <body>
+    <h1><%=city.city%></h1>
+    <ul>
+      <% city.weather.forEach((day)=>{ %>
+      <li>
+        <div class="Icon">
+          <img class="pic" src="/static/<%= day.icon%>.png" alt="" />
+        </div>
+        <div class="temp">
+          <span><%= day.temp%> </span>
+        </div>
+        <div class="message">
+          <%= day.message%>
+        </div>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

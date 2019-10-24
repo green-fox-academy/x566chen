@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <title>Weather Forcast</title>
+  </head>
+  <body>
+    <h1>Dashboard</h1>
+    <ul>
+      <% forecasts.forEach((city)=>{ %>
+      <li>
+        <a href="/cities/<%= city.city%>">
+          <div class="dashboard">
+            <label class="cityname"><%= city.city %> />
+            <label class="citylocation"><%= city.location%> />
+          </div>
+          <div class="warm">
+            <%= city.weather[0].temp%>&#8451;
+          </div>
+          <div class="weathericon">
+            <img src="/static/<%= city.weather[0].icon%>.png" alt="" class="pic" />
+          </div>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+    <script>
+      document.querySelectorAll
+    </script>
+  </body>
+</html>
