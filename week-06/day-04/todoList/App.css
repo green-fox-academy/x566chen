@@ -1,0 +1,13 @@
+.container1{
+    background-color: pink;
+    width: 250px;
+    height: 500px;
+    text-align: center;
+
+}
+.check-btn1{
+    background-color: aqua;
+}
+.delete-btn1{
+    background-color: burlywood;
+}
