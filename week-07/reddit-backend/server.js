@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const mysql = require('mysql');
-app.use(express.json());
+const cors = require('cors')
 
-app.set('view engine', 'ejs');
+app.use(express.json());
+app.use(cors())
+
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -21,7 +23,7 @@ app.get('/posts', (req, res) => {
             res.status(500).send('DB ERROR');
             return;
         }
-        res.status(200).send({posts: result});
+        res.status(200).send(result);
     })
 });
 
@@ -38,12 +40,18 @@ app.post('/posts', (req,res) => {
     connection.query(add_post,(error, result)=>{
 
         if(error){
-        console.log(error);
         res.status(500).send('DB ERROR');
         return;
         }
         res.setHeader('Content-Type', 'application/json');
-        res.status(201).send('sucess!');
+        res.status(201).json({
+            id: timestamp,
+            title: title,
+            url: url,
+            timestamp:timestamp,
+            score:score
+        })
+    
     })
 })
 app.put('/posts/:id/upvote', async(req,res) =>{
@@ -66,7 +74,7 @@ app.put('/posts/:id/upvote', async(req,res) =>{
             return;
             }
             res.setHeader('Content-Type', 'application/json');
-            res.status(201).send({posts: result});
+            res.status(201).send(result);
     })
 
 })
@@ -91,7 +99,7 @@ app.put('/posts/:id/downvote', async(req,res) =>{
             return;
             }
             res.setHeader('Content-Type', 'application/json');
-            res.status(201).send({posts: result});
+            res.status(201).send(result);
     })
 
 })

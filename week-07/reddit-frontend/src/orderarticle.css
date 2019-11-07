@@ -1,0 +1,63 @@
+.part{
+    width: 500px;
+    height: 150px;
+    display: flex;
+    margin-left: 30px;;
+}
+
+.score{
+    width: 30px;
+    margin-top: 20px;
+    height: 30px;
+    text-align: center;
+    background-color: aquamarine;
+    border-radius: 20px;
+    color: rgb(242, 247, 244);
+}
+
+.content{
+    margin-left: 100px;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    border-width: 0 0 1px 0;
+    border-style: dashed;
+    border-color: aquamarine;
+
+}
+.title{
+    margin-top: 25px;
+    color: rgb(85, 129, 103);
+}
+h2{
+    margin-left: 100px;
+}
+.function{
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+.btn{
+    padding: 10px 20px 10px 10px;
+    margin-top: 20px;
+    display: inline-flex;
+
+    
+}
+.upbtn{
+    width: 30px;
+    height: 30px;
+    background-image:url(https://raw.githubusercontent.com/green-fox-academy/jsa-shenzhen-2019-syllabus/master/teaching-materials/reddit/assets/arrows/upvote.png?token=AHSMLQMP2ZQMEA6DP453HL25ZO5HU);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.downbtn{
+    width: 30px;
+    height: 30px;
+    background-image:url(https://github.com/green-fox-academy/jsa-shenzhen-2019-syllabus/blob/master/teaching-materials/reddit/assets/arrows/downvote.png?raw=true);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
