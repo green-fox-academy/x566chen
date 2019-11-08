@@ -22,8 +22,9 @@ function Submitform({history,addArticle}) {
 
   const handleClick=(event)=>{
     event.preventDefault();
-    history.push('/');
+    
     addArticle(title, URL)
+    history.push('/');
   }
 
   return (

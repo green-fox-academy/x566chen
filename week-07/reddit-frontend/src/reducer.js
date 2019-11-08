@@ -11,7 +11,7 @@ export default function (state = initState, action){
     if(action.type === FETCHED_ARTICLE){
         return {
             ...state,
-            article: [...state.article, ...action.article]
+            article: [...action.article]
         }
     }else if(action.type === UP_SCORE){
         let new_article = [...state.article]
@@ -41,8 +41,7 @@ export default function (state = initState, action){
        
     }else if(action.type === POST_ARTICLE){
         return {
-            ...state,
-            article: [action.postarticle]
+            article: [...state.article, action.postarticle]
         }
 
     }

@@ -44,10 +44,7 @@ function PostArticle(title, URL){
         const data = await result.json();
         console.log(data)
 
-        dispatch({
-            type: POST_ARTICLE,
-            postarticle: data
-        })
+        
     }
 }
 
